@@ -1,0 +1,16 @@
+body {
+background-color : aliceblue;
+}
+
+#carticon {
+width:32px;
+height:32px;
+}
+
+#baskettd {
+padding : 0 0 0 0;
+}
+
+#collapsewarning {
+display:none;
+}

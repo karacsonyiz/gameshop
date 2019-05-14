@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale=1">
+    <title>Product</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-4.2.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/product.css"/>
+</head>
+<body>
+<div class="container-fluid">
+    <nav class="navbar navbar-light sticky-top border-bottom">
+        <a class="navbar-brand" href="/products.html">
+            GameShop
+            <img src="/icon/game-controller-a.png" width="35" height="35" class="d-inline-block align-top" alt="">
+        </a>
+            <form class="navbar-form form-inline" role="search">
+                <div class="form-group" id="searchgroup">
+                    <input class="form-control mx-1" type="text" placeholder="Keresés..." id="searchinput">
+                    <button class="btn btn-outline-info" id="searchbutton" type="submit">Go</button>
+                </div>
+            </form>
+        <a class="navbar-brand my-2 my-sm-0" id="logbutton"></a>
+    </nav>
+    <div class="row">
+        <div class="col-2" id="profilediv">
+            <div class="card" style="margin-top: 0.5rem;" align="center" >
+                <h5 class="card-header">Pofile
+                </h5>
+                <img src="" class="card-img-top rounded-circle" id="userimage">
+                <div class="card-body">
+                    <h5 class="card-title" id="username"></h5>
+                    <ul class="list-group list-group-flush" id="userlist">
+                        <li class="list-group-item"><a href="/basket.html" id="basketlink" style="color:black;">Kosár</a></li>
+                        <li class="list-group-item"><a href="/customerorders.html" id="orderlink" style="color:black;">Rendelések</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="page-header">
+                <h1 id="product-name"></h1>
+            </div>
+                <table class="table table-striped" id="producttable">
+                    <thead>
+                    <tr>
+                        <th>Azonosító</th>
+                        <th>Gyártó</th>
+                        <th>Ár</th>
+                        <th>Készleten</th>
+                        <th>Kosárba</th>
+                    </tr>
+                    </thead>
+                    <tbody id="product-tbody">
+                    </tbody>
+                </table>
+            <div class="card card-body col-5 px-3 py-3" id="collapsewarning">
+                <p id="collapsewarningmessage" style="display:inline"></p>
+                    <button type="button" class="close" id="closebutton" style="display:inline">
+                        &times;
+                    </button>
+            </div>
+        </div>
+        <div class="col-2" id="infodiv">
+        </div>
+    </div>
+</div>
+<script src="js/product.js"></script>
+<script src="js/profilebar.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="vendor/bootstrap-4.2.1-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

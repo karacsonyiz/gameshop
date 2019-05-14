@@ -1,0 +1,45 @@
+body {
+background-color : aliceblue;
+}
+
+.clickable-div:hover{
+cursor: pointer;
+opacity: 0.5;
+}
+
+.clickable-div {
+border-width : 25px;
+text-align : center;
+vertical-align: middle;
+height: 90px;
+margin-top : 0.5em;
+background-color : rgba(0,0,0,.03);
+padding: 5px 5px 5px 5px;
+}
+
+.border {
+border-width : 50px;
+}
+
+.clickable-div p {
+text-align : center;
+vertical-align: middle;
+margin : 0;
+}
+
+
+.main {
+}
+
+.cards {
+background-color : aliceblue;
+}
+
+.navbar {
+background-color : aliceblue;
+}
+
+.carousel-inner img {
+height : 300px;
+width : auto;
+}
