@@ -1,12 +1,15 @@
 package com.karacsonyiz.gameshop.controller;
 
 import com.karacsonyiz.gameshop.model.User;
+import com.karacsonyiz.gameshop.service.Response;
 import com.karacsonyiz.gameshop.service.UserService;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -29,8 +32,15 @@ public class UserController {
             String name = userDetails.getUsername();
             String role = new ArrayList<GrantedAuthority>(userDetails.getAuthorities()).get(0).getAuthority();
             User foundUser = userService.findUserByUserName(name).get();
-            return new User(foundUser.getId(), foundUser.getName(), foundUser.getPassword(), foundUser.getEnabled(), foundUser.getRole());
+            return new User(foundUser.getId(), foundUser.getName(), foundUser.getPassword(), foundUser.getEmail(), foundUser.getRole());
         }
+    }
+
+    @RequestMapping(value = "/api/createuser", method = RequestMethod.POST)
+    public Response createUser(@RequestBody User user) {
+            Response resp = userService.createUser(user);
+        System.out.println(resp.getMessage());
+           return resp;
     }
 
     private User getAuthenticatedUser() {

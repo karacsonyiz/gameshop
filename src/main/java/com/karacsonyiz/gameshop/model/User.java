@@ -5,17 +5,17 @@ public class User {
     private long id;
     private String name;
     private String password;
-    private int enabled;
+    private String email;
     private UserRole role = UserRole.ROLE_USER;
 
     public User() {
     }
 
-    public User(long id, String name, String password, int enabled, String role) {
+    public User(long id, String name, String password,String email, String role) {
         this.id = id;
         this.name = name;
         this.password = password;
-        this.enabled = enabled;
+        this.email = email;
         this.role = UserRole.valueOf(role);
     }
 
@@ -31,9 +31,10 @@ public class User {
         return password;
     }
 
-    public int getEnabled() {
-        return enabled;
+    public String getEmail() {
+        return email;
     }
+
 
     public String getRole() {
         return role.name();
@@ -51,8 +52,8 @@ public class User {
         this.password = password;
     }
 
-    public void setEnabled(int enabled) {
-        this.enabled = enabled;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setRole(String role) {

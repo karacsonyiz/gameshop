@@ -15,11 +15,12 @@ function setUserName() {
 function setProfileBarForRegistered(jsonData) {
     let userImage = document.querySelector("#userimage");
     userImage.setAttribute("src",jsonData.name === "admin" ? "img/admin.jpg" : "img/" + jsonData.name + ".png");
+    userImage.setAttribute("onerror",'this.src="img/jar_jar.jpg"');
     let userName = document.querySelector("#username");
     userName.innerHTML = jsonData.name;
     let logoutButton = document.querySelector("#logbutton");
     logoutButton.innerHTML = "Kijelentkezés";
-    logoutButton.setAttribute("href","/logout")
+    logoutButton.setAttribute("href","/logout");
 }
 
 function setProfileBarForGuest(error) {
