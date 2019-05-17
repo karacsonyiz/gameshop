@@ -4,12 +4,15 @@ import com.karacsonyiz.gameshop.model.Product;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Repository
 public class ProductDao {
@@ -50,4 +53,18 @@ public class ProductDao {
             return Optional.empty();
         }
     }
+
+    public void createProduct(Product product) {
+        String uuid = UUID.randomUUID().toString();
+        jdbcTemplate.update(connection -> {
+            PreparedStatement ps = connection.prepareStatement("insert into products(product_id, name, producer, price, quantity) values(?,?,?,?,?)");
+            ps.setString(1, uuid);
+            ps.setString(2, product.getName());
+            ps.setString(3, product.getProducer());
+            ps.setLong(4, product.getPrice());
+            ps.setLong(5, product.getQuantity());
+            return ps;
+        });
+    }
 }
+

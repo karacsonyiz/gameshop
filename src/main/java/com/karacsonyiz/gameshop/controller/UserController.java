@@ -38,9 +38,7 @@ public class UserController {
 
     @RequestMapping(value = "/api/createuser", method = RequestMethod.POST)
     public Response createUser(@RequestBody User user) {
-            Response resp = userService.createUser(user);
-        System.out.println(resp.getMessage());
-           return resp;
+            return userService.createUser(user);
     }
 
     private User getAuthenticatedUser() {

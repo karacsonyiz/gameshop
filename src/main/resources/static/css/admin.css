@@ -1,0 +1,33 @@
+body {
+background-color : aliceblue;
+}
+
+.cards {
+background-color : aliceblue;
+}
+
+.navbar {
+background-color : aliceblue;
+}
+
+.newproductdiv {
+margin-top: 0.5rem;
+}
+
+.productattribute{
+margin-top: 0.5rem;
+}
+
+#submitproduct{
+margin-top: 0.5rem;
+position : absolute;
+left : 0px;
+}
+
+.warning {
+text-align: center;
+}
+
+#warningtext {
+margin-bottom : 0;
+}

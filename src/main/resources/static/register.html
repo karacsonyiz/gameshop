@@ -26,14 +26,16 @@
                 <input type="password" name="password" id="user-password" class="input-text" placeholder="Jelszó" required>
                 <i class="fas fa-lock"></i>
             </div>
+            <div class="warning" id="warningdiv" style="display: none;">
+                <p id="warningtext"></p>
+            </div>
             <div class="license">
-                <input type="checkbox" id="licenseagreement">
+                <input type="checkbox" id="licenseagreement" required>
                 <label for="licenseagreement">Elfogadom az <u>adatkezelési szabályzatot.</u></label>
             </div>
             <div class="form-row-action">
                 <input type="submit" name="register" class="register" value="Regisztráció">
             </div>
-
             <div class="form-row-action">
                 <a class="login-link" href="/login.html">Bejelentkezés</a>
             </div>

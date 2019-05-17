@@ -31,9 +31,6 @@ function fillData(jsonData){
     nameHeader.innerHTML = jsonData.name;
     let tbody = document.querySelector("#product-tbody");
     let tr = document.createElement("tr");
-    let idTd = document.createElement("td");
-    idTd.innerHTML = jsonData.productId;
-    tr.appendChild(idTd);
     let producerTd = document.createElement("td");
     producerTd.innerHTML = jsonData.producer;
     tr.appendChild(producerTd);
@@ -48,7 +45,7 @@ function fillData(jsonData){
     let basketButton = document.createElement("button");
     basketButton.type = "button";
     basketButton.className = "btn btn-link px0 py0";
-    basketButton.addEventListener("click", function () {addingToBasket(this.parentElement.parentElement)});
+    basketButton.addEventListener("click", function () {addingToBasket(jsonData.productId)});
     let icon = document.createElement("img");
     icon.setAttribute("id","carticon");
     icon.setAttribute("src","icon/glyph-iconset-master/svg/si-glyph-trolley-2.svg");
@@ -58,11 +55,9 @@ function fillData(jsonData){
     tbody.appendChild(tr);
 }
 
-function addingToBasket(data) {
+function addingToBasket(productId) {
     let collapseWarning = document.querySelector("#collapsewarning");
     let collapseWarningMessage = document.querySelector("#collapsewarningmessage");
-    let productId = data.firstChild.innerHTML;
-    console.log(data.firstChild.innerHTML);
     fetch("api/basket/" + productId, {
         method: "POST"
         }).then(function(response) {

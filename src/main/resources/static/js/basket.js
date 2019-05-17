@@ -26,9 +26,6 @@ function fillTable(jsonData) {
     tbody.innerHTML = "";
     for(i in jsonData){
         let tr = document.createElement("tr");
-        let idTd = document.createElement("td");
-        idTd.innerHTML = jsonData[i].productId;
-        tr.appendChild(idTd);
         let nameTd = document.createElement("td");
         nameTd.innerHTML = jsonData[i].name;
         tr.appendChild(nameTd);

@@ -2,10 +2,8 @@ package com.karacsonyiz.gameshop.controller;
 
 import com.karacsonyiz.gameshop.model.Product;
 import com.karacsonyiz.gameshop.service.ProductService;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import com.karacsonyiz.gameshop.service.Response;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -27,5 +25,10 @@ public class ProductController {
     @RequestMapping(value = "/api/products/{id}", method = RequestMethod.GET)
     public Optional<Product> findProductById(@PathVariable String id){
         return productService.findProductById(id);
+    }
+
+    @RequestMapping(value = "/api/products", method = RequestMethod.POST)
+    public Response createProduct(@RequestBody Product product) {
+        return productService.createProduct(product);
     }
 }

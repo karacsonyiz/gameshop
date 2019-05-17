@@ -23,8 +23,19 @@ function handleSubmit() {
                    return response.json();
                })
                .then(function(jsonData) {
-                   console.log(jsonData);
+                   handleActions(jsonData);
                })
                .catch(error => console.log(error));
            return false;
+}
+
+function handleActions(jsonData){
+    console.log(jsonData);
+    if(jsonData.validRequest === false) {
+        document.querySelector("#warningtext").innerHTML = jsonData.message;
+        document.querySelector("#warningdiv").style = "display : block;";
+        }
+    else {
+        window.location.href = "/login.html";
+    }
 }

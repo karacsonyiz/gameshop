@@ -21,6 +21,9 @@ function setProfileBarForRegistered(jsonData) {
     let logoutButton = document.querySelector("#logbutton");
     logoutButton.innerHTML = "Kijelentkezés";
     logoutButton.setAttribute("href","/logout");
+    let adminButton = document.querySelector("#adminsettingslink");
+    //if(jsonData.role === "ROLE_ADMIN") {adminButton.setAttribute("display","block")};
+    jsonData.role === "ROLE_ADMIN" ? adminButton.setAttribute("style","display:block;color:black;") : adminButton.setAttribute("style","display:none");
 }
 
 function setProfileBarForGuest(error) {
