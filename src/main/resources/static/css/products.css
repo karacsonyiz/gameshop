@@ -1,5 +1,4 @@
 body {
-background-color : aliceblue;
 }
 
 .clickable-div:hover{
@@ -8,12 +7,13 @@ opacity: 0.5;
 }
 
 .clickable-div {
-border-width : 25px;
 text-align : center;
 vertical-align: middle;
 height: 90px;
-background-color : white;
+background-color : lightblue;
 padding: 5px 5px 5px 5px;
+ border-style: solid;
+ border-width: 3px;
 }
 
 .border {
@@ -31,11 +31,10 @@ margin : 0;
 }
 
 .cards {
-background-color : aliceblue;
 }
 
 .navbar {
-background-color : aliceblue;
+margin : 0;
 }
 
 .carousel-inner img {

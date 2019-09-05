@@ -17,7 +17,7 @@ function fillDivs(jsonData) {
         let gamesDiv = document.querySelector("#gamesdiv");
         for(let i in jsonData) {
             let productDiv = document.createElement("div");
-            productDiv.setAttribute("class","col-3 clickable-div border rounded");
+            productDiv.setAttribute("class","col-3 clickable-div rounded p-2 rounded");
             let name = document.createElement("p");
             let namenode = document.createTextNode(jsonData[i].name);
             name.appendChild(namenode);
